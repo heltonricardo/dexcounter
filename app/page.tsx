@@ -2,13 +2,18 @@
 
 import PokemonCard from "@/components/PokemonCard";
 import { Pokemon } from "@/data/pokemons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import typeColor from "./records/TypeColors";
 
 export default function Home() {
+    const inputRef = useRef<HTMLInputElement>(null);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, []);
 
     useEffect(() => {
         setLoading(true);
@@ -32,7 +37,7 @@ export default function Home() {
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-8">
-                    <h1 className="text-7xl font-bold text-gray-800 mb-2">DexCounter</h1>
+                    <h1 className="text-8xl font-bold text-gray-800 mb-2">DexCounter</h1>
                     <p className="text-gray-600">
                         Discover Pokémon type effectiveness and battle statistics
                     </p>
@@ -42,6 +47,7 @@ export default function Home() {
                     <div className="relative">
                         <input
                             type="text"
+                            ref={inputRef}
                             value={searchQuery}
                             placeholder="Search by name or number..."
                             onChange={(e) => setSearchQuery(e.target.value)}
