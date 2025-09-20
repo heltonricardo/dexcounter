@@ -6,18 +6,13 @@ import { useEffect, useState } from "react";
 import typeColor from "./records/TypeColors";
 
 export default function Home() {
+    const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const fetchPokemon = async () => {
-            if (!searchQuery.trim()) {
-                setPokemonList([]);
-                return;
-            }
-
-            setLoading(true);
             try {
                 const response = await fetch(`/api/pokemon?q=${encodeURIComponent(searchQuery)}`);
                 const data = await response.json();
@@ -29,7 +24,6 @@ export default function Home() {
                 setLoading(false);
             }
         };
-
         const debounceTimer = setTimeout(fetchPokemon, 300);
         return () => clearTimeout(debounceTimer);
     }, [searchQuery]);
@@ -38,7 +32,7 @@ export default function Home() {
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-8">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-2">PokéWeakness</h1>
+                    <h1 className="text-7xl font-bold text-gray-800 mb-2">DexCounter</h1>
                     <p className="text-gray-600">
                         Discover Pokémon type effectiveness and battle statistics
                     </p>
@@ -109,7 +103,7 @@ export default function Home() {
                         </div>
                     )}
 
-                    {searchQuery && pokemonList.length === 0 && !loading && (
+                    {!loading && searchQuery && pokemonList.length === 0 && (
                         <div className="text-center py-8">
                             <p className="text-gray-500">
                                 No Pokémon found for &quot;{searchQuery}&quot;
