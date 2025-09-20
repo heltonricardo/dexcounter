@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Pokemon } from "@/data/pokemons";
 import PokemonCard from "@/components/PokemonCard";
-import Image from "next/image";
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -76,11 +75,9 @@ export default function Home() {
                                         className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
                                         onClick={() => setSearchQuery(pokemon.name)}
                                     >
-                                        <Image
-                                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokedex_number}.png`}
-                                            alt={pokemon.name}
-                                            className="w-12 h-12"
-                                        />
+                                        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-xs">
+                                            #{pokemon.pokedex_number}
+                                        </div>
                                         <div>
                                             <div className="font-medium text-gray-800">
                                                 #
