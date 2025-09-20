@@ -54,15 +54,15 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                     <div className="bg-gray-50 rounded-lg p-4 w-full">
                         <div className="space-y-2">
                             <div className="flex justify-between">
-                                <span className="font-medium">Speed:</span>
+                                <span className="font-medium">Speed</span>
                                 <span className="text-blue-600 font-bold">{pokemon.speed}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="font-medium">Defense:</span>
+                                <span className="font-medium">Defense</span>
                                 <span className="text-green-600 font-bold">{pokemon.defense}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="font-medium">Sp. Defense:</span>
+                                <span className="font-medium">Sp. Defense</span>
                                 <span className="text-purple-600 font-bold">
                                     {pokemon.sp_defense}
                                 </span>

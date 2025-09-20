@@ -23,7 +23,7 @@ export default function Home() {
                 const data = await response.json();
                 setPokemonList(data);
             } catch (error) {
-                console.error("Error fetching pokemon:", error);
+                console.error("Error fetching Pokémon:", error);
                 setPokemonList([]);
             } finally {
                 setLoading(false);
@@ -35,7 +35,7 @@ export default function Home() {
     }, [searchQuery]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-8">
                     <h1 className="text-4xl font-bold text-gray-800 mb-2">PokéWeakness</h1>
@@ -44,14 +44,15 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="max-w-md mx-auto mb-8">
+                <div className="max-w-2lg mx-auto mb-8 px-1">
                     <div className="relative">
                         <input
                             type="text"
-                            placeholder="Search by name or number..."
                             value={searchQuery}
+                            placeholder="Search by name or number..."
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
+                            className={`w-full px-4 py-3 rounded-full border border-gray-500 shadow-sm
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
                         />
                         {loading && (
                             <div className="absolute right-3 top-3">
@@ -76,13 +77,11 @@ export default function Home() {
                                         className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
                                         onClick={() => setSearchQuery(pokemon.name)}
                                     >
-                                        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-xs">
-                                            #{pokemon.pokedex_number}
+                                        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
+                                            {pokemon.pokedex_number.toString().padStart(3, "0")}
                                         </div>
                                         <div>
                                             <div className="font-medium text-gray-800">
-                                                #
-                                                {pokemon.pokedex_number.toString().padStart(3, "0")}{" "}
                                                 {pokemon.name}
                                             </div>
                                             <div className="flex gap-1 mt-1">
@@ -114,15 +113,6 @@ export default function Home() {
                         <div className="text-center py-8">
                             <p className="text-gray-500">
                                 No Pokémon found for &quot;{searchQuery}&quot;
-                            </p>
-                        </div>
-                    )}
-
-                    {!searchQuery && (
-                        <div className="text-center py-12">
-                            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-                            <p className="text-gray-500 text-lg">
-                                Start typing to search for a Pokémon!
                             </p>
                         </div>
                     )}
