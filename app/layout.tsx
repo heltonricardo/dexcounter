@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "PokéWeakness",
+    title: "DexCounter",
     description: "Discover Pokémon type effectiveness and battle statistics",
 };
 
