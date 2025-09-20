@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Pokemon } from "@/data/pokemons";
 import PokemonCard from "@/components/PokemonCard";
+import { Pokemon } from "@/data/pokemons";
+import { useEffect, useState } from "react";
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
