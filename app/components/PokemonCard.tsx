@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Pokemon } from "@/data/pokemons";
-import TypeBadge from "./TypeBadge";
+import Image from "next/image";
 import EffectivenessBadge from "./EffectivenessBadge";
+import TypeBadge from "./TypeBadge";
 
 interface PokemonCardProps {
     pokemon: Pokemon;
