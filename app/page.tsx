@@ -49,7 +49,7 @@ export default function Home() {
                             type="text"
                             ref={inputRef}
                             value={searchQuery}
-                            placeholder="Search by name or number..."
+                            placeholder="Search by name or National Pokédex number..."
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className={`w-full px-4 py-3 rounded-full border border-gray-500 shadow-sm
                                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
