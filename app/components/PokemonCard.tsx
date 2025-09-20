@@ -42,17 +42,16 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         />
                     </div>
 
-                    <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center w-full">
                         #{pokemon.pokedex_number.toString().padStart(3, "0")} {pokemon.name}
                     </h2>
 
-                    <div className="flex gap-2 mb-4">
+                    <div className="flex gap-2 mb-4 w-full justify-center">
                         <TypeBadge type={pokemon.type1} size="lg" />
                         {pokemon.type2 && <TypeBadge type={pokemon.type2} size="lg" />}
                     </div>
 
                     <div className="bg-gray-50 rounded-lg p-4 w-full">
-                        <h3 className="font-semibold text-gray-800 mb-3">Status</h3>
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <span className="font-medium">Speed:</span>

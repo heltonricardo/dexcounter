@@ -14,13 +14,13 @@ const getEffectivenessColor = (value: number): string => {
 };
 
 const getEffectivenessText = (value: number): string => {
-    if (value === 4) return "4×";
-    if (value === 2) return "2×";
-    if (value === 1) return "1×";
-    if (value === 0.5) return "½×";
-    if (value === 0.25) return "¼×";
-    if (value === 0) return "0×";
-    return `${value}×`;
+    if (value === 4) return "4 ×";
+    if (value === 2) return "2 ×";
+    if (value === 1) return "1 ×";
+    if (value === 0.5) return "½ ×";
+    if (value === 0.25) return "¼ ×";
+    if (value === 0) return "0 ×";
+    return `${value} ×`;
 };
 
 export default function EffectivenessBadge({ effectiveness, type }: EffectivenessBadgeProps) {
