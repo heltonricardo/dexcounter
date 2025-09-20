@@ -35,10 +35,10 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                 <div className="flex flex-col items-center md:items-start">
                     <div className="relative w-48 h-48 mb-4">
                         <Image
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokedex_number}.png`}
-                            alt={pokemon.name}
                             fill
+                            alt={pokemon.name}
                             className="object-contain"
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.pokedex_number}.png`}
                         />
                     </div>
 
