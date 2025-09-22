@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const font = Open_Sans({
+    weight: "500",
 });
 
 export const metadata: Metadata = {
     title: "DexCounter",
-    description: "Discover Pokémon type effectiveness and battle statistics",
+    description: "Explore Pokémon weaknesses, resistances, and stats",
 };
 
 export default function RootLayout({
@@ -24,9 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                {children}
-            </body>
+            <body className={font.className}>{children}</body>
         </html>
     );
 }
