@@ -1,3 +1,3 @@
-# DexCounter
+# DexCounter ⚡
 
-DexCounter is a web app with a fast and smart search to quickly check a Pokémon's stats and type matchups, helping you plan effective strategies against it.
+[DexCounter](https://dexcounter.vercel.app/) is a web app to quickly search any Pokémon and see its stats, weaknesses, and resistances, helping you plan effective battle strategies.
