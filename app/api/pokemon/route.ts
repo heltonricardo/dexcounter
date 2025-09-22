@@ -15,5 +15,14 @@ export async function GET(request: NextRequest) {
             pokemon.pokedex_number.toString().includes(query)
     );
 
+    const exactMatch = filteredPokemons.find(
+        (pokemon) =>
+            pokemon.name.toLowerCase() === query || pokemon.pokedex_number.toString() === query
+    );
+
+    if (exactMatch) {
+        return NextResponse.json([exactMatch]);
+    }
+
     return NextResponse.json(filteredPokemons);
 }
