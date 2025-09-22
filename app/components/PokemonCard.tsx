@@ -72,7 +72,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                 </div>
 
                 <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Type Effectiveness</h3>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Damage Taken</h3>
                     <div className="bg-gray-50 rounded-lg p-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {effectivenessData.map(({ type, value }) => (
