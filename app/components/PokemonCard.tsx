@@ -43,7 +43,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                     </div>
 
                     <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center w-full">
-                        #{pokemon.pokedex_number.toString().padStart(3, "0")} {pokemon.name}
+                        #{pokemon.pokedex_number} {pokemon.name}
                     </h2>
 
                     <div className="flex gap-2 mb-4 w-full justify-center">

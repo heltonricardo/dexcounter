@@ -108,7 +108,7 @@ export default function SearchPage() {
                                         onClick={() => handlePokemonClick(pokemon)}
                                     >
                                         <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-                                            {pokemon.pokedex_number.toString().padStart(3, "0")}
+                                            {pokemon.pokedex_number}
                                         </div>
                                         <div>
                                             <div className="font-medium text-gray-800">
