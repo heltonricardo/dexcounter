@@ -2,9 +2,9 @@
 
 import PokemonCard from "@/components/PokemonCard";
 import { Pokemon } from "@/data/pokemons";
-import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import typeColor from "./records/TypeColors";
+import { useEffect, useRef, useState } from "react";
+import getTypeColor from "./constants/TypeColors";
 
 export default function HomePage() {
     const router = useRouter();
@@ -111,7 +111,7 @@ export default function HomePage() {
                                             </div>
                                             <div className="flex gap-1 mt-1">
                                                 <span
-                                                    className={`px-2 py-1 text-xs rounded-full text-white capitalize ${typeColor(
+                                                    className={`px-2 py-1 text-xs rounded-full text-white capitalize ${getTypeColor(
                                                         pokemon.type1
                                                     )}`}
                                                 >
@@ -119,7 +119,7 @@ export default function HomePage() {
                                                 </span>
                                                 {pokemon.type2 && (
                                                     <span
-                                                        className={`px-2 py-1 text-xs rounded-full text-white capitalize ${typeColor(
+                                                        className={`px-2 py-1 text-xs rounded-full text-white capitalize ${getTypeColor(
                                                             pokemon.type2
                                                         )}`}
                                                     >

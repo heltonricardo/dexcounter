@@ -1,4 +1,4 @@
-import typeColor from "@/records/TypeColors";
+import getTypeColor from "@/constants/TypeColors";
 
 interface TypeBadgeProps {
     type: string;
@@ -16,7 +16,7 @@ export default function TypeBadge({ type, size = "md" }: TypeBadgeProps) {
         <span
             className={`
         inline-block rounded-full font-semibold text-white capitalize
-        ${typeColor(type)}
+        ${getTypeColor(type)}
         ${sizeClasses[size]}
       `}
         >

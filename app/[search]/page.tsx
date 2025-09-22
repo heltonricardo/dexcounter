@@ -2,9 +2,9 @@
 
 import PokemonCard from "@/components/PokemonCard";
 import { Pokemon } from "@/data/pokemons";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
-import typeColor from "../records/TypeColors";
+import getTypeColor from "../constants/TypeColors";
 
 export default function SearchPage() {
     const router = useRouter();
@@ -116,7 +116,7 @@ export default function SearchPage() {
                                             </div>
                                             <div className="flex gap-1 mt-1">
                                                 <span
-                                                    className={`px-2 py-1 text-xs rounded-full text-white capitalize ${typeColor(
+                                                    className={`px-2 py-1 text-xs rounded-full text-white capitalize ${getTypeColor(
                                                         pokemon.type1
                                                     )}`}
                                                 >
@@ -124,7 +124,7 @@ export default function SearchPage() {
                                                 </span>
                                                 {pokemon.type2 && (
                                                     <span
-                                                        className={`px-2 py-1 text-xs rounded-full text-white capitalize ${typeColor(
+                                                        className={`px-2 py-1 text-xs rounded-full text-white capitalize ${getTypeColor(
                                                             pokemon.type2
                                                         )}`}
                                                     >
