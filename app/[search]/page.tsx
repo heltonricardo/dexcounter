@@ -3,11 +3,12 @@
 import PokemonCard from "@/components/PokemonCard";
 import { Pokemon } from "@/data/pokemons";
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import typeColor from "./records/TypeColors";
+import { useRouter, useParams } from "next/navigation";
+import typeColor from "../records/TypeColors";
 
-export default function HomePage() {
+export default function SearchPage() {
     const router = useRouter();
+    const params = useParams();
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [loading, setLoading] = useState(false);
@@ -15,8 +16,12 @@ export default function HomePage() {
     const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
 
     useEffect(() => {
+        const urlSearch = params.search as string;
+        if (urlSearch) {
+            setSearchQuery(decodeURIComponent(urlSearch));
+        }
         inputRef.current?.focus();
-    }, []);
+    }, [params.search]);
 
     useEffect(() => {
         if (searchQuery === "") {
