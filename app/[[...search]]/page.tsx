@@ -5,6 +5,7 @@ import { Pokemon } from "@/data/pokemons";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import getTypeColor from "../constants/TypeColors";
+import SearchHeader from "@/components/SearchHeader";
 
 export default function SearchPage() {
     const router = useRouter();
@@ -66,31 +67,12 @@ export default function SearchPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center">
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                    <h1 className="text-8xl font-bold text-gray-800 mb-2">DexCounter</h1>
-                    <p className="text-gray-600">
-                        Explore Pokémon weaknesses, resistances, and stats
-                    </p>
-                </div>
-
-                <div className="max-w-2lg mx-auto mb-8 px-1">
-                    <div className="relative">
-                        <input
-                            type="text"
-                            ref={inputRef}
-                            value={searchQuery}
-                            placeholder="Search by name or number..."
-                            onChange={handleInputChange}
-                            className={`w-full px-4 py-3 rounded-full border border-gray-500 shadow-sm
-                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-                        />
-                        {loading && (
-                            <div className="absolute right-3 top-3">
-                                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                <SearchHeader
+                    loading={loading}
+                    inputRef={inputRef}
+                    searchQuery={searchQuery}
+                    onChange={handleInputChange}
+                />
 
                 <div className="space-y-6">
                     {pokemonList.length === 1 && <PokemonCard pokemon={pokemonList[0]} />}
