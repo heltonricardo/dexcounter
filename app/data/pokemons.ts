@@ -1,3 +1,23 @@
+export type PokemonType =
+    | "bug"
+    | "dark"
+    | "dragon"
+    | "electric"
+    | "fairy"
+    | "fighting"
+    | "fire"
+    | "flying"
+    | "ghost"
+    | "grass"
+    | "ground"
+    | "ice"
+    | "normal"
+    | "poison"
+    | "psychic"
+    | "rock"
+    | "steel"
+    | "water";
+
 export interface Pokemon {
     abilities: string[];
     against_bug: number;
@@ -35,8 +55,8 @@ export interface Pokemon {
     sp_attack: number;
     sp_defense: number;
     speed: number;
-    type1: string;
-    type2: string | null;
+    type1: PokemonType;
+    type2: PokemonType | null;
     weight_kg: number | null;
     generation: number;
     is_legendary: number;
@@ -1156,7 +1176,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 85,
         speed: 110,
         type1: "electric",
-        type2: "electric",
+        type2: null,
         weight_kg: null,
         generation: 1,
         is_legendary: 0,
@@ -2195,7 +2215,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 45,
         speed: 90,
         type1: "ground",
-        type2: "ground",
+        type2: null,
         weight_kg: null,
         generation: 1,
         is_legendary: 0,
@@ -2245,7 +2265,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 70,
         speed: 110,
         type1: "ground",
-        type2: "ground",
+        type2: null,
         weight_kg: null,
         generation: 1,
         is_legendary: 0,
@@ -3843,7 +3863,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 50,
         speed: 25,
         type1: "poison",
-        type2: "poison",
+        type2: null,
         weight_kg: null,
         generation: 1,
         is_legendary: 0,
@@ -3893,7 +3913,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 100,
         speed: 50,
         type1: "poison",
-        type2: "poison",
+        type2: null,
         weight_kg: null,
         generation: 1,
         is_legendary: 0,
@@ -21229,7 +21249,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 75,
         speed: 127,
         type1: "grass",
-        type2: "grass",
+        type2: null,
         weight_kg: 2.1,
         generation: 4,
         is_legendary: 1,
@@ -23938,7 +23958,7 @@ const pokemons: Pokemon[] = [
         sp_defense: 105,
         speed: 55,
         type1: "fire",
-        type2: "fire",
+        type2: null,
         weight_kg: 92.9,
         generation: 5,
         is_legendary: 0,
