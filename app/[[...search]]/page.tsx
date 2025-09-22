@@ -69,7 +69,7 @@ export default function SearchPage() {
                 <div className="text-center mb-8">
                     <h1 className="text-8xl font-bold text-gray-800 mb-2">DexCounter</h1>
                     <p className="text-gray-600">
-                        Discover Pokémon type effectiveness and battle statistics
+                        Explore Pokémon weaknesses, resistances, and stats
                     </p>
                 </div>
 
@@ -140,7 +140,7 @@ export default function SearchPage() {
                     )}
 
                     {!loading && searchQuery && pokemonList.length === 0 && (
-                        <div className="text-center py-8">
+                        <div className="text-center">
                             <p className="text-gray-500">
                                 No Pokémon found for &quot;{searchQuery}&quot;
                             </p>
