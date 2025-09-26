@@ -1,6 +1,5 @@
-import getImageUrl from "@/constants/Image";
 import { Pokemon } from "@/data/pokemons";
-import Image from "next/image";
+import PokemonImage from "./PokemonImage";
 import TypeBadge from "./TypeBadge";
 
 interface PokemonCardProps {
@@ -59,12 +58,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
             <div className="flex flex-col lg:flex-row gap-6 mb-6 justify-between items-stretch">
                 <div className="flex flex-col items-center lg:w-1/2">
                     <div className="relative w-48 h-48 mb-4">
-                        <Image
-                            fill
-                            alt={pokemon.name}
-                            className="object-contain"
-                            src={getImageUrl(pokemon.pokedexNumber)}
-                        />
+                        <PokemonImage pokedexNumber={pokemon.pokedexNumber} />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-800 text-center">
                         #{pokemon.pokedexNumber} {pokemon.name}
