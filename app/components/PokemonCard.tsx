@@ -1,3 +1,4 @@
+import getImageUrl from "@/constants/Image";
 import { Pokemon } from "@/data/pokemons";
 import Image from "next/image";
 import TypeBadge from "./TypeBadge";
@@ -62,7 +63,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                             fill
                             alt={pokemon.name}
                             className="object-contain"
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.pokedex_number}.png`}
+                            src={getImageUrl(pokemon.pokedex_number)}
                         />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-800 text-center">
@@ -75,8 +76,8 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4 lg:w-1/2">
-                    <div className="space-y-3 h-full flex flex-col justify-center lg:gap-3">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-4">Stats</h3>
+                    <h3 className="text-xl font-semibold text-gray-800">Stats</h3>
+                    <div className="space-y-3 h-full flex flex-col justify-center">
                         <div className="flex justify-between gap-16">
                             <span className="font-medium text-gray-700">Speed</span>
                             <span className="text-blue-600 font-bold">{pokemon.speed}</span>
