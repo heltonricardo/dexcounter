@@ -86,7 +86,9 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         </div>
                         <div className="flex justify-between gap-16">
                             <span className="font-medium text-gray-700">Weight</span>
-                            <span className="text-orange-600 font-bold">{pokemon.weightKg} kg</span>
+                            <span className="text-orange-600 font-bold">
+                                {pokemon.weightKg ? `${pokemon.weightKg} kg` : "?"}
+                            </span>
                         </div>
                     </div>
                 </div>
