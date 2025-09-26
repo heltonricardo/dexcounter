@@ -56,7 +56,11 @@ export default function SearchPage() {
     const handlePokemonClick = (pokemon: Pokemon) => setSearchQuery(pokemon.name);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center">
+        <div
+            className={`
+                min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center
+            `}
+        >
             <div className="max-w-6xl mx-auto">
                 <SearchHeader
                     loading={loading}

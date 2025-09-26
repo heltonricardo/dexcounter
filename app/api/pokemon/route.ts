@@ -1,5 +1,16 @@
 import pokemons from "@/data/pokemons";
+import Fuse from "fuse.js";
 import { NextRequest, NextResponse } from "next/server";
+
+const pokemonByNumber: Record<number, (typeof pokemons)[number]> = {};
+pokemons.forEach((p) => {
+    pokemonByNumber[p.pokedexNumber] = p;
+});
+
+const fuse = new Fuse(pokemons, {
+    keys: ["name"],
+    threshold: 0.1,
+});
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
@@ -9,20 +20,21 @@ export async function GET(request: NextRequest) {
         return NextResponse.json([]);
     }
 
-    const filteredPokemons = pokemons.filter(
-        (pokemon) =>
-            pokemon.name.toLowerCase().includes(query) ||
-            pokemon.pokedexNumber.toString().includes(query)
-    );
+    const num = Number(query);
+    if (!isNaN(num) && pokemonByNumber[num]) {
+        return NextResponse.json([pokemonByNumber[num]]);
+    }
 
-    const exactMatch = filteredPokemons.find(
-        (pokemon) =>
-            pokemon.name.toLowerCase() === query || pokemon.pokedexNumber.toString() === query
-    );
-
+    const exactMatch = pokemons.find((p) => p.name.toLowerCase() === query);
     if (exactMatch) {
         return NextResponse.json([exactMatch]);
     }
 
-    return NextResponse.json(filteredPokemons);
+    const startsWithMatches = pokemons.filter((p) => p.name.toLowerCase().startsWith(query));
+    if (startsWithMatches.length) {
+        return NextResponse.json(startsWithMatches);
+    }
+
+    const results = fuse.search(query).map((r) => r.item);
+    return NextResponse.json(results);
 }
