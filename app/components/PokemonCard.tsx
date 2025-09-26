@@ -54,9 +54,9 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
     });
 
     return (
-        <div className="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-6 mb-6 justify-between items-stretch">
-                <div className="flex flex-col items-center lg:w-1/2">
+        <article className="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+            <section className="flex flex-col lg:flex-row gap-6 mb-6 justify-between items-stretch">
+                <aside className="flex flex-col items-center lg:w-1/2">
                     <div className="relative w-48 h-48 mb-4">
                         <PokemonImage pokedexNumber={pokemon.pokedexNumber} />
                     </div>
@@ -67,34 +67,44 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         <TypeBadge type={pokemon.type1} size="lg" />
                         {pokemon.type2 && <TypeBadge type={pokemon.type2} size="lg" />}
                     </div>
-                </div>
+                </aside>
 
-                <div className="bg-gray-50 rounded-lg p-4 lg:w-1/2">
-                    <h3 className="text-xl font-semibold text-gray-800">Stats</h3>
-                    <div className="space-y-3 h-full flex flex-col justify-center">
-                        <div className="flex justify-between gap-16">
-                            <span className="font-medium text-gray-700">Speed</span>
-                            <span className="text-blue-600 font-bold">{pokemon.speed}</span>
-                        </div>
-                        <div className="flex justify-between gap-16">
-                            <span className="font-medium text-gray-700">Defense</span>
-                            <span className="text-green-600 font-bold">{pokemon.defense}</span>
-                        </div>
-                        <div className="flex justify-between gap-16">
-                            <span className="font-medium text-gray-700">Sp. Defense</span>
-                            <span className="text-purple-600 font-bold">{pokemon.spDefense}</span>
-                        </div>
-                        <div className="flex justify-between gap-16">
-                            <span className="font-medium text-gray-700">Weight</span>
-                            <span className="text-orange-600 font-bold">
-                                {pokemon.weightKg ? `${pokemon.weightKg} kg` : "?"}
-                            </span>
+                <aside className="flex flex-col gap-6 lg:gap-2">
+                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Stats</h3>
+                        <div className="space-y-3 h-full flex flex-col justify-center">
+                            <div className="flex justify-between gap-16">
+                                <span className="font-medium text-gray-700">Speed</span>
+                                <span className="text-blue-600 font-bold">{pokemon.speed}</span>
+                            </div>
+                            <div className="flex justify-between gap-16">
+                                <span className="font-medium text-gray-700">Defense</span>
+                                <span className="text-green-600 font-bold">{pokemon.defense}</span>
+                            </div>
+                            <div className="flex justify-between gap-16">
+                                <span className="font-medium text-gray-700">Sp. Defense</span>
+                                <span className="text-purple-600 font-bold">
+                                    {pokemon.spDefense}
+                                </span>
+                            </div>
+                            <div className="flex justify-between gap-16">
+                                <span className="font-medium text-gray-700">Weight</span>
+                                <span className="text-orange-600 font-bold">
+                                    {pokemon.weightKg ? `${pokemon.weightKg} kg` : "?"}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Abilities</h3>
+                        <div className="space-y-3 h-full flex flex-col justify-center">
+                            <p>{pokemon.abilities.sort().join(" • ")}</p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
 
-            <div className="bg-gray-50 rounded-lg p-4">
+            <section className="bg-gray-50 rounded-lg p-4">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Damage Taken</h3>
                 <div className="space-y-8">
                     {(["4x", "2x", "1x", "0.5x", "0.25x", "0x"] as const).map((multiplier) => {
@@ -117,7 +127,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         );
                     })}
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     );
 }
