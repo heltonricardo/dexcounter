@@ -24,17 +24,23 @@ export default function SearchHeader({
 
             <div className="max-w-md sm:max-w-lg mx-auto relative">
                 <input
-                    ref={inputRef}
                     type="text"
+                    ref={inputRef}
                     value={searchQuery}
                     onChange={onChange}
-                    placeholder="Search by name or number..."
-                    className="w-full px-4 py-3 rounded-full border border-gray-500 shadow-sm
-                               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Search by name or enter a National Pokédex number"
+                    className={`
+                        w-full px-4 py-3 rounded-full
+                        border border-gray-400 shadow-sm focus:outline-none
+                    `}
                 />
                 {loading && (
                     <div className="absolute right-3 top-3">
-                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
+                        <div
+                            className={`
+                            animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500
+                        `}
+                        ></div>
                     </div>
                 )}
             </div>

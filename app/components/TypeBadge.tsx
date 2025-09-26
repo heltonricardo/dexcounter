@@ -15,10 +15,10 @@ export default function TypeBadge({ type, size = "md" }: TypeBadgeProps) {
     return (
         <span
             className={`
-        inline-block rounded-full font-semibold text-white capitalize
-        ${getTypeColor(type)}
-        ${sizeClasses[size]}
-      `}
+                ${getTypeColor(type)}
+                ${sizeClasses[size]}
+                inline-block rounded-full font-semibold text-white capitalize
+            `}
         >
             {type}
         </span>
