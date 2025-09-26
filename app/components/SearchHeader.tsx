@@ -26,9 +26,9 @@ export default function SearchHeader({
                 <input
                     type="text"
                     ref={inputRef}
-                    value={searchQuery}
                     onChange={onChange}
-                    placeholder="Search by name or enter a National Pokédex number"
+                    value={searchQuery}
+                    placeholder="Search name or enter National number"
                     className={`
                         w-full px-4 py-3 rounded-full
                         border border-gray-400 shadow-sm focus:outline-none
