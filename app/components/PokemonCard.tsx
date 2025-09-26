@@ -69,10 +69,10 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                     </div>
                 </aside>
 
-                <aside className="flex flex-col gap-6 lg:gap-2">
-                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Stats</h3>
-                        <div className="space-y-3 h-full flex flex-col justify-center">
+                <aside className="flex flex-col gap-6 lg:gap-2 lg:w-1/2">
+                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full lg:h-2/3">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3 lg:mb-0">Stats</h3>
+                        <div className="h-full flex flex-col justify-center">
                             <div className="flex justify-between gap-16">
                                 <span className="font-medium text-gray-700">Speed</span>
                                 <span className="text-blue-600 font-bold">{pokemon.speed}</span>
@@ -95,9 +95,11 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Abilities</h3>
-                        <div className="space-y-3 h-full flex flex-col justify-center">
+                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full lg:h-1/3">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3 lg:mb-0">
+                            Abilities
+                        </h3>
+                        <div className="h-full flex flex-col justify-center">
                             <p>{pokemon.abilities.sort().join(" • ")}</p>
                         </div>
                     </div>
