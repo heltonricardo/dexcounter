@@ -21,7 +21,7 @@ export default function PokemonList({ pokemonList, onPokemonClick }: Props) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {pokemonList.map((pokemon) => (
                         <PokemonListItem
-                            key={pokemon.pokedex_number}
+                            key={pokemon.pokedexNumber}
                             pokemon={pokemon}
                             onClick={onPokemonClick}
                         />

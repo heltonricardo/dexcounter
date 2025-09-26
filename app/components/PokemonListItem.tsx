@@ -13,7 +13,7 @@ export default function PokemonListItem({ pokemon, onClick }: Props) {
             onClick={() => onClick(pokemon)}
         >
             <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-                {pokemon.pokedex_number}
+                {pokemon.pokedexNumber}
             </div>
             <div>
                 <div className="font-medium text-gray-800">{pokemon.name}</div>

@@ -12,12 +12,12 @@ export async function GET(request: NextRequest) {
     const filteredPokemons = pokemons.filter(
         (pokemon) =>
             pokemon.name.toLowerCase().includes(query) ||
-            pokemon.pokedex_number.toString().includes(query)
+            pokemon.pokedexNumber.toString().includes(query)
     );
 
     const exactMatch = filteredPokemons.find(
         (pokemon) =>
-            pokemon.name.toLowerCase() === query || pokemon.pokedex_number.toString() === query
+            pokemon.name.toLowerCase() === query || pokemon.pokedexNumber.toString() === query
     );
 
     if (exactMatch) {

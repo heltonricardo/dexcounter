@@ -18,24 +18,24 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
     };
 
     const damageMappings = [
-        { type: "bug", value: pokemon.against_bug },
-        { type: "dark", value: pokemon.against_dark },
-        { type: "dragon", value: pokemon.against_dragon },
-        { type: "electric", value: pokemon.against_electric },
-        { type: "fairy", value: pokemon.against_fairy },
-        { type: "fighting", value: pokemon.against_fight },
-        { type: "fire", value: pokemon.against_fire },
-        { type: "flying", value: pokemon.against_flying },
-        { type: "ghost", value: pokemon.against_ghost },
-        { type: "grass", value: pokemon.against_grass },
-        { type: "ground", value: pokemon.against_ground },
-        { type: "ice", value: pokemon.against_ice },
-        { type: "normal", value: pokemon.against_normal },
-        { type: "poison", value: pokemon.against_poison },
-        { type: "psychic", value: pokemon.against_psychic },
-        { type: "rock", value: pokemon.against_rock },
-        { type: "steel", value: pokemon.against_steel },
-        { type: "water", value: pokemon.against_water },
+        { type: "bug", value: pokemon.againstBug },
+        { type: "dark", value: pokemon.againstDark },
+        { type: "dragon", value: pokemon.againstDragon },
+        { type: "electric", value: pokemon.againstElectric },
+        { type: "fairy", value: pokemon.againstFairy },
+        { type: "fighting", value: pokemon.againstFight },
+        { type: "fire", value: pokemon.againstFire },
+        { type: "flying", value: pokemon.againstFlying },
+        { type: "ghost", value: pokemon.againstGhost },
+        { type: "grass", value: pokemon.againstGrass },
+        { type: "ground", value: pokemon.againstGround },
+        { type: "ice", value: pokemon.againstIce },
+        { type: "normal", value: pokemon.againstNormal },
+        { type: "poison", value: pokemon.againstPoison },
+        { type: "psychic", value: pokemon.againstPsychic },
+        { type: "rock", value: pokemon.againstRock },
+        { type: "steel", value: pokemon.againstSteel },
+        { type: "water", value: pokemon.againstWater },
     ];
 
     damageMappings.forEach(({ type, value }) => {
@@ -63,11 +63,11 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                             fill
                             alt={pokemon.name}
                             className="object-contain"
-                            src={getImageUrl(pokemon.pokedex_number)}
+                            src={getImageUrl(pokemon.pokedexNumber)}
                         />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-800 text-center">
-                        #{pokemon.pokedex_number} {pokemon.name}
+                        #{pokemon.pokedexNumber} {pokemon.name}
                     </h2>
                     <div className="flex gap-2 mt-5">
                         <TypeBadge type={pokemon.type1} size="lg" />
@@ -88,13 +88,11 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         </div>
                         <div className="flex justify-between gap-16">
                             <span className="font-medium text-gray-700">Sp. Defense</span>
-                            <span className="text-purple-600 font-bold">{pokemon.sp_defense}</span>
+                            <span className="text-purple-600 font-bold">{pokemon.spDefense}</span>
                         </div>
                         <div className="flex justify-between gap-16">
                             <span className="font-medium text-gray-700">Weight</span>
-                            <span className="text-orange-600 font-bold">
-                                {pokemon.weight_kg} kg
-                            </span>
+                            <span className="text-orange-600 font-bold">{pokemon.weightKg} kg</span>
                         </div>
                     </div>
                 </div>
