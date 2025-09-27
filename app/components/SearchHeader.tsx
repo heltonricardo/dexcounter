@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Ref } from "react";
 
 interface SearchHeaderProps {
@@ -15,9 +16,12 @@ export default function SearchHeader({
 }: SearchHeaderProps) {
     return (
         <div className="text-center mb-8 px-2 sm:px-4">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-gray-800 mb-2">
+            <Link
+                href="/"
+                className="text-5xl sm:text-6xl md:text-8xl font-bold text-gray-800 mb-2"
+            >
                 DexCounter
-            </h1>
+            </Link>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6">
                 Explore Pokémon weaknesses, resistances, and stats
             </p>
