@@ -15,23 +15,32 @@ export default function SearchHeader({
     inputRef,
 }: SearchHeaderProps) {
     return (
-        <div className="text-center mb-8 px-2 sm:px-4">
-            <h1>
+        <header className="flex flex-col justify-center mb-8 px-2 sm:px-4">
+            <h1 className="flex justify-center">
                 <Link
                     href="/"
-                    className="text-5xl sm:text-6xl md:text-8xl font-bold text-gray-800 mb-2"
+                    className={`
+                        sm:-mt-2 -ml-2 text sm:leading-14 md:leading-20 text-5xl sm:text-6xl
+                        md:text-8xl font-bold text-gray-800
+                    `}
                 >
                     DexCounter
                 </Link>
             </h1>
-            <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6">
-                Explore Pokémon weaknesses, resistances, and stats •{" "}
+
+            <div
+                className={`
+                    flex flex-col items-center text-gray-600 mb-6 text-sm md:text-lg md:flex-row
+                `}
+            >
+                Explore Pokémon weaknesses, resistances, and stats
+                <span className="mx-1 hidden md:inline">•</span>
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://helton.vercel.app"
                     className={`
-                        inline-flex items-center
+                        inline-flex items-center text-nowrap
                         hover:text-gray-900 transition-colors duration-200"`}
                 >
                     By Helton
@@ -50,9 +59,9 @@ export default function SearchHeader({
                         />
                     </svg>
                 </a>
-            </p>
+            </div>
 
-            <div className="max-w-md sm:max-w-lg mx-auto relative">
+            <div className="max-w-md sm:max-w-lg mx-auto relative w-full">
                 <input
                     type="text"
                     ref={inputRef}
@@ -74,6 +83,6 @@ export default function SearchHeader({
                     </div>
                 )}
             </div>
-        </div>
+        </header>
     );
 }
