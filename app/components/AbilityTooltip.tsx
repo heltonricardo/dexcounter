@@ -1,7 +1,7 @@
 import { abilities } from "@/data/abilities";
 import { useEffect, useRef } from "react";
 import tippy, { Instance } from "tippy.js";
-import 'tippy.js/animations/shift-away-subtle.css';
+import "tippy.js/animations/shift-away-subtle.css";
 import "tippy.js/dist/tippy.css";
 
 interface AbilityTooltipProps {

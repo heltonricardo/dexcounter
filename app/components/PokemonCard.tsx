@@ -1,7 +1,7 @@
 import { Pokemon } from "@/data/pokemons";
+import AbilityTooltip from "./AbilityTooltip";
 import PokemonImage from "./PokemonImage";
 import TypeBadge from "./TypeBadge";
-import AbilityTooltip from "./AbilityTooltip";
 
 interface PokemonCardProps {
     pokemon: Pokemon;

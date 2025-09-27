@@ -3,7 +3,7 @@ import Fuse from "fuse.js";
 import { NextRequest, NextResponse } from "next/server";
 
 const pokemonByNumber: Record<number, (typeof pokemons)[number]> = {};
-pokemons.forEach((p) => {
+pokemons.forEach(p => {
     pokemonByNumber[p.pokedexNumber] = p;
 });
 
@@ -25,16 +25,16 @@ export async function GET(request: NextRequest) {
         return NextResponse.json([pokemonByNumber[num]]);
     }
 
-    const exactMatch = pokemons.find((p) => p.name.toLowerCase() === query);
+    const exactMatch = pokemons.find(p => p.name.toLowerCase() === query);
     if (exactMatch) {
         return NextResponse.json([exactMatch]);
     }
 
-    const startsWithMatches = pokemons.filter((p) => p.name.toLowerCase().startsWith(query));
+    const startsWithMatches = pokemons.filter(p => p.name.toLowerCase().startsWith(query));
     if (startsWithMatches.length) {
         return NextResponse.json(startsWithMatches);
     }
 
-    const results = fuse.search(query).map((r) => r.item);
+    const results = fuse.search(query).map(r => r.item);
     return NextResponse.json(results);
 }
