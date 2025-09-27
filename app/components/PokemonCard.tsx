@@ -55,9 +55,9 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
     });
 
     return (
-        <article className="bg-white rounded-lg shadow-lg p-6 max-w-3xl lg:min-w-3xl mx-auto">
-            <section className="flex flex-col lg:flex-row gap-6 mb-6 justify-between items-stretch">
-                <aside className="flex flex-col items-center lg:w-1/2">
+        <main className="bg-white rounded-lg shadow-lg p-6 max-w-3xl lg:min-w-3xl mx-auto">
+            <article className="flex flex-col lg:flex-row gap-5 mb-5 justify-between items-stretch">
+                <section className="flex flex-col items-center lg:w-1/2 justify-evenly">
                     <div className="relative w-48 h-48 mb-4">
                         <PokemonImage pokedexNumber={pokemon.pokedexNumber} />
                     </div>
@@ -68,12 +68,12 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         <TypeBadge type={pokemon.type1} size="lg" />
                         {pokemon.type2 && <TypeBadge type={pokemon.type2} size="lg" />}
                     </div>
-                </aside>
+                </section>
 
-                <aside className="flex flex-col gap-6 lg:gap-2 lg:w-1/2">
-                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full lg:h-2/3">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3 lg:mb-0">Stats</h3>
-                        <div className="h-full flex flex-col justify-center">
+                <section className="flex flex-col gap-5 lg:w-1/2 justify-evenly">
+                    <aside className="bg-gray-50 rounded-lg p-4 flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Stats</h3>
+                        <div className="flex flex-col justify-center">
                             <div className="flex justify-between gap-16">
                                 <span className="font-medium text-gray-700">Speed</span>
                                 <span className="text-blue-600 font-bold">{pokemon.speed}</span>
@@ -95,30 +95,30 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-4 lg:w-full lg:h-1/3">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3 lg:mb-0">
-                            Abilities
-                        </h3>
-                        <div className="h-full flex flex-col justify-center">
-                            <div className="flex flex-wrap gap-2">
-                                {pokemon.abilities.sort().map((ability, index) => (
-                                    <span key={ability}>
-                                        <AbilityTooltip abilityName={ability}>
-                                            {ability}
-                                        </AbilityTooltip>
-                                        {index < pokemon.abilities.length - 1 && (
-                                            <span className="text-gray-400 ml-2">•</span>
-                                        )}
-                                    </span>
-                                ))}
+                    </aside>
+                    <aside className="bg-gray-50 rounded-lg p-4 flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Abilities</h3>
+                        <div className="flex flex-col justify-center">
+                            <div className="h-full flex flex-col justify-center">
+                                <div className="flex flex-wrap gap-2">
+                                    {pokemon.abilities.sort().map((ability, index) => (
+                                        <span key={ability}>
+                                            <AbilityTooltip abilityName={ability}>
+                                                {ability}
+                                            </AbilityTooltip>
+                                            {index < pokemon.abilities.length - 1 && (
+                                                <span className="text-gray-400 ml-2">•</span>
+                                            )}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </aside>
-            </section>
+                    </aside>
+                </section>
+            </article>
 
-            <section className="bg-gray-50 rounded-lg p-4">
+            <article className="bg-gray-50 rounded-lg p-4">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Damage Taken</h3>
                 <div className="space-y-8">
                     {(["4x", "2x", "1x", "0.5x", "0.25x", "0x"] as const).map(multiplier => {
@@ -141,7 +141,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                         );
                     })}
                 </div>
-            </section>
-        </article>
+            </article>
+        </main>
     );
 }
