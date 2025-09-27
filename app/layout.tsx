@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Encode_Sans_Semi_Expanded } from "next/font/google";
 import "./globals.css";
 
-const font = Open_Sans({
-    weight: "500",
+const font = Encode_Sans_Semi_Expanded({
+    weight: "600",
 });
 
 export const metadata: Metadata = {

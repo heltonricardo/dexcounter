@@ -20,8 +20,8 @@ export default function SearchHeader({
                 <Link
                     href="/"
                     className={`
-                        sm:-mt-2 -ml-2 text sm:leading-14 md:leading-20 text-5xl sm:text-6xl
-                        md:text-8xl font-bold text-gray-800
+                        text sm:leading-14 md:leading-20 text-5xl sm:text-6xl
+                        md:text-8xl font-bold text-gray-800 mb-1
                     `}
                 >
                     DexCounter
@@ -30,7 +30,8 @@ export default function SearchHeader({
 
             <div
                 className={`
-                    flex flex-col items-center text-gray-600 mb-6 text-sm md:text-lg md:flex-row
+                    flex flex-col justify-center items-center
+                    text-gray-600 mb-6 text-sm md:text-lg md:flex-row
                 `}
             >
                 Explore Pokémon weaknesses, resistances, and stats
@@ -45,13 +46,13 @@ export default function SearchHeader({
                 >
                     By Helton
                     <svg
-                        className="w-3 h-3 ml-1"
                         fill="none"
-                        stroke="currentColor"
                         viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="w-3 h-3 ml-1"
                     >
                         <path
-                            strokeWidth={2}
+                            strokeWidth={2.7}
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             d={`M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0
