@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+.tippy-box[data-theme~="light"] {
+    background-color: white;
+    color: #374151;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: white;
+}
+
+.tippy-box[data-theme~="light"][data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: white;
+}
+
+.tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: white;
+}
+
+.tippy-box[data-theme~="light"][data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: white;
+}
+
+@media (max-width: 640px) {
+    .tippy-box {
+        max-width: 280px !important;
+        font-size: 0.875rem;
+    }
+}

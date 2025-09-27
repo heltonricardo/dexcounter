@@ -1,6 +1,7 @@
 import { Pokemon } from "@/data/pokemons";
 import PokemonImage from "./PokemonImage";
 import TypeBadge from "./TypeBadge";
+import AbilityTooltip from "./AbilityTooltip";
 
 interface PokemonCardProps {
     pokemon: Pokemon;
@@ -54,7 +55,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
     });
 
     return (
-        <article className="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+        <article className="bg-white rounded-lg shadow-lg p-6 max-w-3xl lg:min-w-3xl mx-auto">
             <section className="flex flex-col lg:flex-row gap-6 mb-6 justify-between items-stretch">
                 <aside className="flex flex-col items-center lg:w-1/2">
                     <div className="relative w-48 h-48 mb-4">
@@ -100,7 +101,18 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                             Abilities
                         </h3>
                         <div className="h-full flex flex-col justify-center">
-                            <p>{pokemon.abilities.sort().join(" • ")}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {pokemon.abilities.sort().map((ability, index) => (
+                                    <span key={ability}>
+                                        <AbilityTooltip abilityName={ability}>
+                                            {ability}
+                                        </AbilityTooltip>
+                                        {index < pokemon.abilities.length - 1 && (
+                                            <span className="text-gray-400 ml-2">•</span>
+                                        )}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -109,7 +121,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
             <section className="bg-gray-50 rounded-lg p-4">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Damage Taken</h3>
                 <div className="space-y-8">
-                    {(["4x", "2x", "1x", "0.5x", "0.25x", "0x"] as const).map((multiplier) => {
+                    {(["4x", "2x", "1x", "0.5x", "0.25x", "0x"] as const).map(multiplier => {
                         const types = damageGroups[multiplier];
                         if (types.length === 0) return null;
 
@@ -121,7 +133,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                                     {displayMultiplier}
                                 </h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {types.map((type) => (
+                                    {types.map(type => (
                                         <TypeBadge key={type} type={type} size="md" />
                                     ))}
                                 </div>
