@@ -537,7 +537,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Compoundeyes", "Tinted Lens"],
+        abilities: ["Compound Eyes", "Tinted Lens"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -1096,7 +1096,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Static", "Lightningrod"],
+        abilities: ["Static", "Lightning Rod"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -2085,7 +2085,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Compoundeyes", "Tinted Lens", "Run Away"],
+        abilities: ["Compound Eyes", "Tinted Lens", "Run Away"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -8355,7 +8355,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Speed Boost", "Compoundeyes", "Frisk"],
+        abilities: ["Speed Boost", "Compound Eyes", "Frisk"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -11623,7 +11623,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Shield Dust", "Compoundeyes"],
+        abilities: ["Shield Dust", "Compound Eyes"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -12526,7 +12526,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Compoundeyes", "Run Away"],
+        abilities: ["Compound Eyes", "Run Away"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -25641,7 +25641,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Compoundeyes", "Unnerve", "Swarm"],
+        abilities: ["Compound Eyes", "Unnerve", "Swarm"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -25684,7 +25684,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Compoundeyes", "Unnerve", "Swarm"],
+        abilities: ["Compound Eyes", "Unnerve", "Swarm"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -28608,7 +28608,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Shield Dust", "Compoundeyes", "Friend Guard"],
+        abilities: ["Shield Dust", "Compound Eyes", "Friend Guard"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -28694,7 +28694,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Shield Dust", "Compoundeyes", "Friend Guard"],
+        abilities: ["Shield Dust", "Compound Eyes", "Friend Guard"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
