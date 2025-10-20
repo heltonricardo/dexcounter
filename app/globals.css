@@ -8,20 +8,41 @@
     border-radius: 8px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .tippy-box[data-theme~="light"] {
+        background-color: #1f2937;
+        color: #f3f4f6;
+        box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
+        border: 1px solid #374151;
+    }
+}
+
 .tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
     border-top-color: white;
 }
-
 .tippy-box[data-theme~="light"][data-placement^="bottom"] > .tippy-arrow::before {
     border-bottom-color: white;
 }
-
 .tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
     border-left-color: white;
 }
-
 .tippy-box[data-theme~="light"][data-placement^="right"] > .tippy-arrow::before {
     border-right-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
+        border-top-color: #1f2937;
+    }
+    .tippy-box[data-theme~="light"][data-placement^="bottom"] > .tippy-arrow::before {
+        border-bottom-color: #1f2937;
+    }
+    .tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
+        border-left-color: #1f2937;
+    }
+    .tippy-box[data-theme~="light"][data-placement^="right"] > .tippy-arrow::before {
+        border-right-color: #1f2937;
+    }
 }
 
 @media (max-width: 640px) {
