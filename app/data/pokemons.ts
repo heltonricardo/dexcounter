@@ -838,7 +838,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Run Away", "Guts", "Hustle", "Gluttony", "Hustle", "Thick Fat"],
+        abilities: ["Run Away", "Guts", "Hustle", "Gluttony", "Thick Fat"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -881,7 +881,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Run Away", "Guts", "Hustle", "Gluttony", "Hustle", "Thick Fat"],
+        abilities: ["Run Away", "Guts", "Hustle", "Gluttony", "Thick Fat"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -2171,14 +2171,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: [
-            "Sand Veil",
-            "Arena Trap",
-            "Sand Force",
-            "Sand Veil",
-            "Tangling Hair",
-            "Sand Force",
-        ],
+        abilities: ["Sand Veil", "Arena Trap", "Sand Force", "Tangling Hair"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -2221,14 +2214,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: [
-            "Sand Veil",
-            "Arena Trap",
-            "Sand Force",
-            "Sand Veil",
-            "Tangling Hair",
-            "Sand Force",
-        ],
+        abilities: ["Sand Veil", "Arena Trap", "Tangling Hair", "Sand Force"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -2271,7 +2257,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Pickup", "Technician", "Unnerve", "Pickup", "Technician", "Rattled"],
+        abilities: ["Pickup", "Technician", "Unnerve", "Rattled"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -2314,7 +2300,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Limber", "Technician", "Unnerve", "Fur Coat", "Technician", "Rattled"],
+        abilities: ["Limber", "Technician", "Unnerve", "Fur Coat", "Rattled"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -3217,7 +3203,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Sturdy", "Galvanize"],
+        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Galvanize"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -3260,7 +3246,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Sturdy", "Galvanize"],
+        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Galvanize"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -3303,7 +3289,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Sturdy", "Galvanize"],
+        abilities: ["Rock Head", "Sturdy", "Sand Veil", "Magnet Pull", "Galvanize"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -3819,14 +3805,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: [
-            "Stench",
-            "Sticky Hold",
-            "Poison Touch",
-            "Poison Touch",
-            "Gluttony",
-            "Power of Alchemy",
-        ],
+        abilities: ["Stench", "Sticky Hold", "Poison Touch", "Gluttony", "Power of Alchemy"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -3869,14 +3848,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: [
-            "Stench",
-            "Sticky Hold",
-            "Poison Touch",
-            "Poison Touch",
-            "Gluttony",
-            "Power of Alchemy",
-        ],
+        abilities: ["Stench", "Sticky Hold", "Poison Touch", "Gluttony", "Power of Alchemy"],
         againstBug: 0.5,
         againstDark: 1,
         againstDragon: 1,
@@ -4478,7 +4450,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Chlorophyll", "Harvest", "Frisk", "Harvest"],
+        abilities: ["Chlorophyll", "Frisk", "Harvest"],
         againstBug: 4,
         againstDark: 2,
         againstDragon: 1,
@@ -4564,14 +4536,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: [
-            "Rock Head",
-            "Lightningrod",
-            "Battle Armor",
-            "Cursed Body",
-            "Lightningrod",
-            "Rock Head",
-        ],
+        abilities: ["Rock Head", "Lightningrod", "Battle Armor", "Cursed Body", "Lightningrod"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
@@ -32091,7 +32056,7 @@ const pokemons: Pokemon[] = [
         isLegendary: 0,
     },
     {
-        abilities: ["Keen Eye", "Sand Rush", "Steadfast", "Keen Eye", "Vital Spirit", "No Guard"],
+        abilities: ["Keen Eye", "Sand Rush", "Steadfast", "Vital Spirit", "No Guard"],
         againstBug: 1,
         againstDark: 1,
         againstDragon: 1,
