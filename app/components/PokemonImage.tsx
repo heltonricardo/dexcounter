@@ -24,7 +24,7 @@ export default function PokemonImage({ pokedexNumber }: { pokedexNumber: number 
         <Image
             fill
             src={src}
-            className="object-contain"
+            className="object-contain dark:brightness-90"
             alt={`pokemon-${pokedexNumber}`}
             onError={() => setIndex(prev => prev + 1)}
         />

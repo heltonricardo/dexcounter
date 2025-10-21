@@ -21,7 +21,7 @@ export default function SearchHeader({
                     href="/"
                     className={`
                         text sm:leading-14 md:leading-20 text-5xl sm:text-6xl
-                        md:text-8xl font-bold text-gray-800 mb-1
+                        md:text-8xl font-bold text-gray-800 mb-1 dark:text-gray-300
                     `}
                 >
                     DexCounter
@@ -31,7 +31,7 @@ export default function SearchHeader({
             <div
                 className={`
                     flex flex-col justify-center items-center
-                    text-gray-600 mb-6 text-sm md:text-lg md:flex-row
+                    text-gray-600 dark:text-gray-600 mb-6 text-sm md:text-lg md:flex-row
                 `}
             >
                 Explore Pokémon weaknesses, resistances, and stats
@@ -42,7 +42,8 @@ export default function SearchHeader({
                     href="https://helton.vercel.app"
                     className={`
                         inline-flex items-center text-nowrap
-                        hover:text-gray-900 transition-colors duration-200"`}
+                        hover:text-gray-900 transition-colors duration-200 dark:hover:text-gray-700
+                    `}
                 >
                     By Helton
                     <svg
@@ -71,7 +72,7 @@ export default function SearchHeader({
                     placeholder="Search name or enter National number"
                     className={`
                         w-full px-4 py-3 rounded-full
-                        border border-gray-400 shadow-sm focus:outline-none
+                        border border-gray-400 dark:border-gray-600 dark:text-gray-400 shadow-sm focus:outline-none
                     `}
                 />
                 {loading && (

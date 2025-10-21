@@ -55,13 +55,15 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
     });
 
     return (
-        <main className="bg-white rounded-lg shadow-lg p-6 max-w-3xl lg:min-w-3xl mx-auto">
+        <main className={`
+            bg-white rounded-lg shadow-lg p-6 max-w-3xl lg:min-w-3xl mx-auto dark:bg-slate-800
+        `}>
             <article className="flex flex-col lg:flex-row gap-5 mb-5 justify-between items-stretch">
                 <section className="flex flex-col items-center lg:w-1/2 justify-evenly">
                     <div className="relative w-48 h-48 mb-4">
                         <PokemonImage pokedexNumber={pokemon.pokedexNumber} />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-800 text-center">
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 text-center">
                         #{pokemon.pokedexNumber} {pokemon.name}
                     </h2>
                     <div className="flex gap-2 mt-5">
@@ -71,33 +73,33 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                 </section>
 
                 <section className="flex flex-col gap-5 lg:w-1/2 justify-evenly">
-                    <aside className="bg-gray-50 rounded-lg p-4 flex-1">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Stats</h3>
+                    <aside className="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Stats</h3>
                         <div className="flex flex-col justify-center">
                             <div className="flex justify-between gap-16">
-                                <span className="font-medium text-gray-700">Speed</span>
+                                <span className="font-medium text-gray-700 dark:text-gray-300">Speed</span>
                                 <span className="text-blue-600 font-bold">{pokemon.speed}</span>
                             </div>
                             <div className="flex justify-between gap-16">
-                                <span className="font-medium text-gray-700">Defense</span>
+                                <span className="font-medium text-gray-700 dark:text-gray-300">Defense</span>
                                 <span className="text-green-600 font-bold">{pokemon.defense}</span>
                             </div>
                             <div className="flex justify-between gap-16">
-                                <span className="font-medium text-gray-700">Sp. Defense</span>
+                                <span className="font-medium text-gray-700 dark:text-gray-300">Sp. Defense</span>
                                 <span className="text-purple-600 font-bold">
                                     {pokemon.spDefense}
                                 </span>
                             </div>
                             <div className="flex justify-between gap-16">
-                                <span className="font-medium text-gray-700">Weight</span>
-                                <span className="text-orange-600 font-bold">
+                                <span className="font-medium text-gray-700 dark:text-gray-300">Weight</span>
+                                <span className="text-orange-600 dark:text-orange-700 font-bold">
                                     {pokemon.weightKg ? `${pokemon.weightKg} kg` : "?"}
                                 </span>
                             </div>
                         </div>
                     </aside>
-                    <aside className="bg-gray-50 rounded-lg p-4 flex-1">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3">Abilities</h3>
+                    <aside className="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Abilities</h3>
                         <div className="flex flex-col justify-center">
                             <div className="h-full flex flex-col justify-center">
                                 <div className="flex flex-wrap gap-2">
@@ -107,7 +109,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                                                 {ability}
                                             </AbilityTooltip>
                                             {index < pokemon.abilities.length - 1 && (
-                                                <span className="text-gray-400 ml-2">•</span>
+                                                <span className="text-gray-400 ml-2 dark:text-gray-300">•</span>
                                             )}
                                         </span>
                                     ))}
@@ -118,8 +120,8 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                 </section>
             </article>
 
-            <article className="bg-gray-50 rounded-lg p-4">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Damage Taken</h3>
+            <article className="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Damage Taken</h3>
                 <div className="space-y-8">
                     {(["4x", "2x", "1x", "0.5x", "0.25x", "0x"] as const).map(multiplier => {
                         const types = damageGroups[multiplier];
@@ -129,7 +131,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
 
                         return (
                             <div key={multiplier}>
-                                <h4 className="font-semibold text-gray-700 mb-2">
+                                <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     {displayMultiplier}
                                 </h4>
                                 <div className="flex flex-wrap gap-2">

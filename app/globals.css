@@ -1,53 +1,67 @@
 @import "tailwindcss";
 
 .tippy-box[data-theme~="light"] {
-    background-color: white;
     color: #374151;
-    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
     border-radius: 8px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .tippy-box[data-theme~="light"] {
-        background-color: #1f2937;
-        color: #f3f4f6;
-        box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
-        border: 1px solid #374151;
-    }
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
 }
 
 .tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
     border-top-color: white;
 }
-.tippy-box[data-theme~="light"][data-placement^="bottom"] > .tippy-arrow::before {
-    border-bottom-color: white;
+
+.tippy-title {
+    font-weight: 600;
+    margin-bottom: 4px;
 }
-.tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
-    border-left-color: white;
+
+.tippy-description {
+    font-size: 0.875rem;
+    opacity: 0.8;
 }
-.tippy-box[data-theme~="light"][data-placement^="right"] > .tippy-arrow::before {
-    border-right-color: white;
+
+.tippy-box[data-theme~="light"] .tippy-title {
+    color: #111827;
+}
+
+.tippy-box[data-theme~="light"] .tippy-description {
+    color: #6b7280;
 }
 
 @media (prefers-color-scheme: dark) {
+    .tippy-box[data-theme~="light"] .tippy-title {
+        color: #f9fafb !important;
+        opacity: 1;
+    }
+
+    .tippy-box[data-theme~="light"] .tippy-description {
+        color: #9ca3af !important;
+        opacity: 0.9;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .tippy-box[data-theme~="light"] {
+        background-color: #1f2937;
+        border: 1px solid #374151;
+        box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
+    }
+
     .tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
         border-top-color: #1f2937;
     }
-    .tippy-box[data-theme~="light"][data-placement^="bottom"] > .tippy-arrow::before {
-        border-bottom-color: #1f2937;
-    }
-    .tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
-        border-left-color: #1f2937;
-    }
-    .tippy-box[data-theme~="light"][data-placement^="right"] > .tippy-arrow::before {
-        border-right-color: #1f2937;
+
+    .tippy-box[data-theme~="light"] .tippy-content,
+    .tippy-box[data-theme~="light"] .tippy-content * {
+        color: #f3f4f6 !important;
     }
 }
 
 @media (max-width: 640px) {
     .tippy-box {
-        max-width: 280px !important;
         font-size: 0.875rem;
+        max-width: 280px !important;
     }
 }

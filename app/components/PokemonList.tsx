@@ -14,7 +14,7 @@ export default function PokemonList({ pokemonList, onPokemonClick }: Props) {
 
     if (pokemonList.length > 1) {
         return (
-            <div className="bg-white rounded-lg shadow p-4">
+            <div className="bg-white rounded-lg shadow p-4 dark:bg-slate-800">
                 <h2 className="text-lg font-semibold text-gray-800 mb-4">
                     Found {pokemonList.length} Pokémon
                 </h2>

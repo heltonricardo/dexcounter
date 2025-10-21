@@ -59,6 +59,7 @@ export default function SearchPage() {
         <div
             className={`
                 min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 flex items-center
+                dark:from-slate-900 dark:to-gray-950
             `}
         >
             <div className="max-w-6xl mx-auto">
