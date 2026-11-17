@@ -20,7 +20,7 @@ export default function SearchHeader({
                 <Link
                     href="/"
                     className={`
-                        text sm:leading-14 md:leading-20 text-5xl sm:text-6xl
+                        sm:leading-14 md:leading-20 text-5xl sm:text-6xl
                         md:text-8xl font-bold text-gray-800 mb-1 dark:text-gray-300
                     `}
                 >
@@ -69,6 +69,7 @@ export default function SearchHeader({
                     ref={inputRef}
                     onChange={onChange}
                     value={searchQuery}
+                    autoComplete="off"
                     placeholder="Search name or enter National number"
                     className={`
                         w-full px-4 py-3 rounded-full
@@ -79,8 +80,8 @@ export default function SearchHeader({
                     <div className="absolute right-3 top-3">
                         <div
                             className={`
-                            animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500
-                        `}
+                                animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500
+                            `}
                         ></div>
                     </div>
                 )}

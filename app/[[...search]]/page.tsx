@@ -3,52 +3,53 @@
 import NoResults from "@/components/NoResults";
 import PokemonList from "@/components/PokemonList";
 import SearchHeader from "@/components/SearchHeader";
-import { Pokemon } from "@/data/pokemons";
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import type { Pokemon } from "@/data/types";
+import { loadIndex, PokemonIndex, search } from "@/lib/search";
+import { useParams } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function SearchPage() {
-    const router = useRouter();
     const params = useParams();
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [loading, setLoading] = useState(false);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-
-    useEffect(() => {
-        const urlSearch = params.search as string;
-        if (urlSearch) setSearchQuery(decodeURIComponent(urlSearch));
-        inputRef.current?.focus();
-    }, [params.search]);
-
-    useEffect(() => {
-        if (!searchQuery) router.replace("/", { scroll: false });
-        else router.replace(`/${encodeURIComponent(searchQuery)}`, { scroll: false });
-    }, [searchQuery, router]);
-
-    useEffect(() => {
-        if (!searchQuery) {
-            setPokemonList([]);
-            return;
+    const [index, setIndex] = useState<PokemonIndex | null>(null);
+    const [searchQuery, setSearchQuery] = useState(() => {
+        const raw = params.search;
+        const value = Array.isArray(raw) ? raw[0] : raw;
+        if (!value) return "";
+        try {
+            return decodeURIComponent(value);
+        } catch {
+            return value;
         }
+    });
 
-        setLoading(true);
-        const fetchPokemon = async () => {
-            try {
-                const response = await fetch(`/api/pokemon?q=${encodeURIComponent(searchQuery)}`);
-                const data = await response.json();
-                setPokemonList(data);
-            } catch {
-                setPokemonList([]);
-            } finally {
-                setLoading(false);
-            }
-        };
+    useEffect(() => {
+        inputRef.current?.focus();
+        const run = () => loadIndex().then(setIndex);
+        if ("requestIdleCallback" in window) {
+            const id = requestIdleCallback(run, { timeout: 1000 });
+            return () => cancelIdleCallback(id);
+        }
+        const timer = setTimeout(run, 0);
+        return () => clearTimeout(timer);
+    }, []);
 
-        const debounceTimer = setTimeout(fetchPokemon, 300);
-        return () => clearTimeout(debounceTimer);
+    useEffect(() => {
+        const path = searchQuery ? `/${encodeURIComponent(searchQuery)}` : "/";
+        window.history.replaceState(null, "", path);
     }, [searchQuery]);
+
+    useEffect(() => {
+        if (searchQuery) loadIndex().then(setIndex);
+    }, [searchQuery]);
+
+    const pokemonList = useMemo(
+        () => (index ? search(index, searchQuery) : []),
+        [index, searchQuery]
+    );
+
+    const loading = !!searchQuery && !index;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
         setSearchQuery(e.target.value);

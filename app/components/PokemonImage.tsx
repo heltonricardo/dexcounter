@@ -11,22 +11,26 @@ const collections: Record<Collection, { path: string; ext: string }> = {
     show: { path: "other/showdown/", ext: "gif" },
 };
 
-const order: Collection[] = ["dream", "home", "official", "pixel", "show"];
+const order: Collection[] = ["official", "home", "dream", "pixel", "show"];
 const baseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
-export default function PokemonImage({ pokedexNumber }: { pokedexNumber: number }) {
+function Sprite({ pokedexNumber }: { pokedexNumber: number }) {
     const [index, setIndex] = useState(0);
     if (index >= order.length) return null;
     const { path, ext } = collections[order[index]];
-    const src = `${baseUrl}${path}${pokedexNumber}.${ext}`;
 
     return (
         <Image
             fill
-            src={src}
+            priority
+            src={`${baseUrl}${path}${pokedexNumber}.${ext}`}
             className="object-contain dark:brightness-90"
             alt={`pokemon-${pokedexNumber}`}
             onError={() => setIndex(prev => prev + 1)}
         />
     );
+}
+
+export default function PokemonImage({ pokedexNumber }: { pokedexNumber: number }) {
+    return <Sprite key={pokedexNumber} pokedexNumber={pokedexNumber} />;
 }

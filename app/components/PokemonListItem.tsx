@@ -1,4 +1,4 @@
-import { Pokemon } from "@/data/pokemons";
+import type { Pokemon } from "@/data/types";
 import TypeBadge from "./TypeBadge";
 
 interface Props {
@@ -8,11 +8,20 @@ interface Props {
 
 export default function PokemonListItem({ pokemon, onClick }: Props) {
     return (
-        <div
-            className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer dark:bg-slate-700/50 dark:hover:bg-slate-700"
+        <button
+            type="button"
+            className={`
+                flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100
+                transition-colors cursor-pointer text-left dark:bg-slate-700/50 dark:hover:bg-slate-700
+            `}
             onClick={() => onClick(pokemon)}
         >
-            <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400 dark:bg-slate-700/50">
+            <div
+                className={`
+                    w-12 h-12 shrink-0 bg-gray-200 rounded-lg flex items-center justify-center
+                    text-gray-500 dark:text-gray-400 dark:bg-slate-700/50
+                `}
+            >
                 {pokemon.pokedexNumber}
             </div>
             <div>
@@ -22,6 +31,6 @@ export default function PokemonListItem({ pokemon, onClick }: Props) {
                     {pokemon.type2 && <TypeBadge type={pokemon.type2} size="sm" />}
                 </div>
             </div>
-        </div>
+        </button>
     );
 }

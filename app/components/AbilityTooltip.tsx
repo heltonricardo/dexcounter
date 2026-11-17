@@ -1,6 +1,6 @@
-import { abilities } from "@/data/abilities";
+import { getAbilityDescription } from "@/lib/abilities";
 import { useEffect, useRef } from "react";
-import tippy, { Instance } from "tippy.js";
+import tippy from "tippy.js";
 import "tippy.js/animations/shift-away-subtle.css";
 import "tippy.js/dist/tippy.css";
 
@@ -11,35 +11,38 @@ interface AbilityTooltipProps {
 
 export default function AbilityTooltip({ abilityName, children }: AbilityTooltipProps) {
     const elementRef = useRef<HTMLSpanElement>(null);
-    const tippyInstance = useRef<Instance | null>(null);
 
     useEffect(() => {
-        if (elementRef.current) {
-            const description = abilities[abilityName] || "Ability description not found";
+        const element = elementRef.current;
+        if (!element) return;
 
-            tippyInstance.current = tippy(elementRef.current, {
-                arrow: true,
-                touch: true,
-                zIndex: 9999,
-                maxWidth: 250,
-                theme: "light",
-                allowHTML: true,
-                placement: "top",
-                interactive: true,
-                duration: [200, 150],
-                animation: "shift-away-subtle",
-                content: `<div class="text-sm">
-                    <div class="font-semibold text-gray-900 mb-1">${abilityName}</div>
-                    <div class="text-gray-700">${description}</div>
-                </div>`,
-            });
-        }
+        const content = document.createElement("div");
+        content.className = "text-sm";
 
-        return () => {
-            if (tippyInstance.current) {
-                tippyInstance.current.destroy();
-            }
-        };
+        const title = document.createElement("div");
+        title.className = "font-semibold text-gray-900 mb-1";
+        title.textContent = abilityName;
+
+        const description = document.createElement("div");
+        description.className = "text-gray-700";
+        description.textContent = getAbilityDescription(abilityName);
+
+        content.append(title, description);
+
+        const instance = tippy(element, {
+            content,
+            arrow: true,
+            touch: true,
+            zIndex: 9999,
+            maxWidth: 250,
+            theme: "light",
+            placement: "top",
+            interactive: true,
+            duration: [200, 150],
+            animation: "shift-away-subtle",
+        });
+
+        return () => instance.destroy();
     }, [abilityName]);
 
     return (
